@@ -1,0 +1,364 @@
+{
+  "summary": {
+    "checker": "check_language",
+    "ruleset": "university-generic",
+    "errors": 0,
+    "warnings": 39,
+    "infos": 0,
+    "status": "PASS",
+    "files_scanned": 9
+  },
+  "findings": [
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 5,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 9,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 11,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 13,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 15,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 17,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 48,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 58,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 60,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 68,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 76,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 102,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 119,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 121,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 122,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 129,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 141,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 149,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 183,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 185,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 238,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 242,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 284,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 298,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 333,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 336,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 337,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 338,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 340,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 11,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 84,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 121,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 177,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 179,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter4.tex",
+      "line": 218,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter5.tex",
+      "line": 202,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter5.tex",
+      "line": 204,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "LANG_CJK_LATIN_SPACING",
+      "message": "Possible missing spacing between CJK and Latin tokens",
+      "file": "chapters/chapter5.tex",
+      "line": 206,
+      "suggestion": "Add a space between Chinese and English tokens where appropriate"
+    }
+  ]
+}

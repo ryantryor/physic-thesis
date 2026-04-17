@@ -1,0 +1,220 @@
+{
+  "summary": {
+    "checker": "check_format",
+    "ruleset": "university-generic",
+    "errors": 4,
+    "warnings": 19,
+    "infos": 0,
+    "status": "FAIL",
+    "files_scanned": 10
+  },
+  "findings": [
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "FMT_BROKEN_REF",
+      "message": "reference target not found: fig:3-5",
+      "file": "chapters/chapter3.tex",
+      "line": 84,
+      "suggestion": "Define matching \\label or fix ref key"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "FMT_BROKEN_REF",
+      "message": "reference target not found: fig:3-5",
+      "file": "chapters/chapter3.tex",
+      "line": 86,
+      "suggestion": "Define matching \\label or fix ref key"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "FMT_BROKEN_REF",
+      "message": "reference target not found: fig:3-5",
+      "file": "chapters/chapter3.tex",
+      "line": 84,
+      "suggestion": "Define matching \\label or fix ref key"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "FMT_BROKEN_REF",
+      "message": "reference target not found: fig:3-5",
+      "file": "chapters/chapter3.tex",
+      "line": 86,
+      "suggestion": "Define matching \\label or fix ref key"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:2-1",
+      "file": "chapters/chapter2.tex",
+      "line": 218,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:3-5a",
+      "file": "chapters/chapter3.tex",
+      "line": 91,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:3-5b",
+      "file": "chapters/chapter3.tex",
+      "line": 97,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.4.1",
+      "file": "chapters/chapter3.tex",
+      "line": 192,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.4.2",
+      "file": "chapters/chapter3.tex",
+      "line": 202,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.5.1",
+      "file": "chapters/chapter3.tex",
+      "line": 296,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.5.2",
+      "file": "chapters/chapter3.tex",
+      "line": 302,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.5.3",
+      "file": "chapters/chapter3.tex",
+      "line": 308,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.5.4",
+      "file": "chapters/chapter3.tex",
+      "line": 314,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: sec:3.5.5",
+      "file": "chapters/chapter3.tex",
+      "line": 344,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: chapter-4",
+      "file": "chapters/chapter4.tex",
+      "line": 3,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:4-2",
+      "file": "chapters/chapter4.tex",
+      "line": 166,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:4-3",
+      "file": "chapters/chapter4.tex",
+      "line": 184,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:4-4",
+      "file": "chapters/chapter4.tex",
+      "line": 196,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: tab:5-1",
+      "file": "chapters/chapter5.tex",
+      "line": 30,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: tab:5-2",
+      "file": "chapters/chapter5.tex",
+      "line": 50,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:5-1",
+      "file": "chapters/chapter5.tex",
+      "line": 218,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:5-5",
+      "file": "chapters/chapter5.tex",
+      "line": 425,
+      "suggestion": "Remove the unused label or add a ref"
+    },
+    {
+      "status": "FAIL",
+      "severity": "warning",
+      "code": "FMT_ORPHAN_LABEL",
+      "message": "label not referenced: fig:5-7",
+      "file": "chapters/chapter5.tex",
+      "line": 445,
+      "suggestion": "Remove the unused label or add a ref"
+    }
+  ]
+}

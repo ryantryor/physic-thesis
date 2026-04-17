@@ -1,0 +1,63 @@
+% !TeX root = ../thesis.tex
+\begin{abstract}
+  随着宇宙学大型巡天项目（如 CSST、DESI、Euclid 等）的推进，观测数据的精度和规模迅速提升。
+  传统的两点关联函数和功率谱分析方法面临非线性尺度信息提取不足的挑战，亟需开发高精度的理论
+  预测工具。宇宙学仿真器（emulator）通过在高精度 N 体模拟上训练机器学习模型，建立统计量与
+  宇宙学参数之间的映射关系，以极低的计算成本实现对任意参数组合下统计量的快速预测，已成为
+  该领域的主流方法。
+
+  本文系统研究了高斯过程（GP）仿真器中核函数选择对预测精度和参数约束能力的影响。基于 129
+  组覆盖 9 维宇宙学参数空间的高精度 N 体模拟数据，分别针对各向同性两点关联函数 $\xi(s)$ 和
+  距离积分关联函数 $\xi(\mu)$（定义为将二维关联函数 $\xi(s,\mu)$ 对分离距离 $s$
+  在 $0$ 至 $120~\mathrm{Mpc}/h$ 范围内积分，保留角度 $\mu$ 为自变量）构建仿真器，
+  系统比较了六种核函数的性能：RBF 核、Mat\'ern$(\nu=5/2)$ 核、Mat\'ern$(\nu=3/2)$ 核、
+  Mat\'ern$(\nu=1/2)$ 核、Rational Quadratic（RQ）核及 Mat\'ern$\times$RBF 乘积组合核。
+  实验采用严格的公平对比策略：随机训练/测试划分、固定随机种子、相同超参数搜索预算，并通过
+  留一交叉验证（LOO-CV）进行精度评估。
+
+  结果表明：在 $\xi(s)$ 上，Mat\'ern 族核（$\nu=5/2$ 和 $3/2$）和 RQ 核均显著优于 RBF 核
+  （配对 Wilcoxon 检验 $p<0.0001$，经 Bonferroni 校正后仍显著），而 Mat\'ern$(\nu=1/2)$
+  核因过度粗糙表现最差（MAE${}=0.00821$，比 RBF 高 $45\%$）。Mat\'ern$(\nu=5/2)$ 与
+  Mat\'ern$(\nu=3/2)$ 性能无统计显著差异（$p=0.81$），表明 $\nu=5/2$ 和 $3/2$ 均为合适
+  选择。$\xi(\mu)$ 上核函数差异在无泄露条件下不显著。Mat\'ern$(\nu=5/2)$ 核的联合约束品质
+  因子 ${\rm FoM}=58.9$（bootstrap 标准差 $0.2$），相比单独使用 $\xi(s)$ 提升 $25\%$。
+  六种核的联合 FoM 从高到低依次为：Mat\'ern$(5/2)$ ($58.9$) ${}>{}$ Mat\'ern$(3/2)$
+  ($58.3$) ${}>{}$ RQ ($57.7$) ${}>{}$ Mat\'ern$(1/2)$ ($56.3$) ${}>{}$ Combined
+  ($50.4$) ${}>{}$ RBF ($49.3$)。实验通过 3-seed 重复性验证（MAE 种子间标准差
+  ${<}0.0002$）和 Gelman--Rubin 收敛诊断（$\hat R<1.01$）确认了结果稳健性。本研究推荐
+  Mat\'ern$(\nu=5/2)$ 核作为面向 CSST 宇宙学仿真器的默认选择。
+\end{abstract}
+
+\begin{abstract*}
+  With the rapid advancement of large-scale cosmological surveys such as CSST, DESI,
+  and Euclid, traditional two-point correlation function analyses face challenges in
+  extracting nonlinear-scale information. Cosmological emulators, which use machine
+  learning models trained on N-body simulations to map statistical observables to
+  cosmological parameters, have become the mainstream approach.
+
+  This thesis systematically investigates the impact of kernel function selection in
+  Gaussian Process (GP) emulators on prediction accuracy and parameter constraint
+  capability. Based on $129$ high-precision N-body simulations spanning a $9$-dimensional
+  cosmological parameter space, emulators are constructed for both the isotropic
+  two-point correlation function $\xi(s)$ and the distance-integrated correlation
+  function $\xi(\mu)=\int_0^{120}\xi(s,\mu)\,ds$ (integrated over separations
+  $0$--$120~\mathrm{Mpc}/h$). Six kernel functions are compared under a rigorous
+  fair-comparison protocol: RBF, Mat\'ern$(\nu=5/2)$, Mat\'ern$(\nu=3/2)$,
+  Mat\'ern$(\nu=1/2)$, Rational Quadratic, and Mat\'ern$\times$RBF product kernel,
+  with randomized train/test splitting, independent random seeds, equal hyperparameter
+  budgets via Optuna, and leave-one-out cross-validation (LOO-CV) for accuracy
+  assessment.
+
+  Results show: (1) For $\xi(s)$, the Mat\'ern family ($\nu=5/2$ and $3/2$) achieves
+  LOO MAE ${\sim}0.0051$, significantly outperforming RBF ($0.00565$, $p<0.0001$) and
+  RQ ($0.00539$, $p<0.001$); Mat\'ern$(\nu=1/2)$ performs worst (MAE ${}=0.00821$,
+  too rough). Mat\'ern$(5/2)$ and Mat\'ern$(3/2)$ show no significant difference
+  ($p=0.81$). (2) For $\xi(\mu)$, kernel differences are not robust under
+  leakage-free conditions. (3) Joint FoM ranking: Mat\'ern$(5/2)$ ($58.9$) ${}>{}$
+  Mat\'ern$(3/2)$ ($58.3$) ${}>{}$ RQ ($57.7$) ${}>{}$ Mat\'ern$(1/2)$ ($56.3$)
+  ${}>{}$ Combined ($50.4$) ${}>{}$ RBF ($49.3$). (4) Results are highly reproducible
+  across $3$ independent random seeds. (5) All MCMC chains pass Gelman--Rubin
+  convergence diagnostics ($\hat R<1.01$). This work recommends Mat\'ern$(\nu=5/2)$
+  as the default kernel for CSST-oriented cosmological emulators.
+\end{abstract*}
+

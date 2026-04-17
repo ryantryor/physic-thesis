@@ -1,0 +1,13 @@
+{
+  "summary": {
+    "checker": "check_bib_quality",
+    "ruleset": "university-generic",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "status": "PASS",
+    "files_scanned": 0,
+    "entries_scanned": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,221 @@
+\chapter{研究方法}\label{chap:method}
+
+\section{高斯过程回归}\label{sec:gp}
+
+高斯过程（GP）是一种非参数贝叶斯回归方法，将函数空间上的先验定义为
+$f(\symbf{x})\sim\mathcal{GP}(m(\symbf{x}),\,k(\symbf{x},\symbf{x}'))$，其中 $m(\symbf{x})$ 为均值函数
+（取为零），$k(\symbf{x},\symbf{x}')$ 为核函数。给定训练数据 $\{X,\symbf{y}\}$，GP 的预测分布为
+解析高斯分布：
+\begin{align}
+  f^{*}(\symbf{x}^{*}) &\sim \mathcal N(\mu^{*},\, {\sigma^{*}}^2),
+    \label{eq:gp-pred} \\
+  \mu^{*} &= k(\symbf{x}^{*},X)\, \left[K + \sigma_n^2 I\right]^{-1} \symbf{y},
+    \label{eq:gp-mean} \\
+  {\sigma^{*}}^2 &= k(\symbf{x}^{*},\symbf{x}^{*})
+    - k(\symbf{x}^{*},X)\, \left[K + \sigma_n^2 I\right]^{-1} k(X,\symbf{x}^{*}),
+    \label{eq:gp-var}
+\end{align}
+其中 $K$ 是训练数据的核矩阵，$\sigma_n^2$ 是噪声方差。GP 回归的计算复杂度为 $O(n^3)$
+（核矩阵求逆），对本文的 129 个训练样本完全可行（单次训练约 $2$ 秒）。本文采用
+scikit-learn\cite{Pedregosa2011}的多输出 GP 架构：单个 GP 接收 9 维参数输入，同时预测
+所有输出 bin（$\xi(s)$ 为 120 维，$\xi(\mu)$ 为 97 维），所有 bin 共享核函数超参数和
+核矩阵 $K$，每个 bin 通过独立的回归权重 $\alpha_j=K^{-1}\symbf{y}_j$ 分别计算预测值。
+这不同于逐 bin 独立训练 120/97 个 GP 的方式。对于更大规模（1000+ 样本）的场景，可考虑
+稀疏 GP（FITC/SVGP）或随机傅里叶特征等近似方法。
+
+GP 仿真器的训练和预测流程原理为：训练阶段通过核函数计算协方差矩阵并拟合回归模型，
+预测阶段利用训练好的模型对新参数给出均值预测和不确定度估计。
+
+% TODO: 将 02_GP仿真器原理图.png 放入 figures/ 后取消注释
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.95\linewidth]{02_GP仿真器原理图.png}
+%   \caption{高斯过程仿真器原理示意图}
+%   \label{fig:gp-principle}
+% \end{figure}
+
+\section{核函数}\label{sec:kernels}
+
+本文系统比较以下六种核函数：
+
+\paragraph{（1）RBF 核（平方指数核）}
+\begin{equation}\label{eq:k-rbf}
+  k_{\rm RBF}(\symbf{x},\symbf{x}') = \sigma^2\, \exp\!\left(
+    -\frac{\lVert \symbf{x}-\symbf{x}' \rVert^2}{2\ell^{2}} \right).
+\end{equation}
+RBF 核生成无限可微的极光滑函数，是 GP 回归最常用的核函数。
+
+\paragraph{（2）Mat\'ern$(\nu=5/2)$ 核}
+\begin{equation}\label{eq:k-m52}
+  k_{\rm M52}(\symbf{x},\symbf{x}') = \sigma^2 \left(
+    1 + \frac{\sqrt{5}\,r}{\ell} + \frac{5 r^2}{3\ell^2}
+  \right) \exp\!\left(-\frac{\sqrt{5}\,r}{\ell}\right),
+  \quad r=\lVert \symbf{x}-\symbf{x}' \rVert.
+\end{equation}
+生成二阶可微函数，在光滑性与灵活性间取得良好平衡，是 GP 文献中最常用的 Mat\'ern
+变体\cite{Rasmussen2006}。
+
+\paragraph{（3）Mat\'ern$(\nu=3/2)$ 核}
+\begin{equation}\label{eq:k-m32}
+  k_{\rm M32}(\symbf{x},\symbf{x}') = \sigma^2 \left(1 + \frac{\sqrt{3}\,r}{\ell}\right)
+    \exp\!\left(-\frac{\sqrt{3}\,r}{\ell}\right).
+\end{equation}
+生成一阶可微函数，比 $\nu=5/2$ 更灵活但也更``粗糙''。
+
+\paragraph{（4）Mat\'ern$(\nu=1/2)$ 核（指数核）}
+\begin{equation}\label{eq:k-m12}
+  k_{\rm M12}(\symbf{x},\symbf{x}') = \sigma^2\, \exp\!\left(-\frac{r}{\ell}\right).
+\end{equation}
+生成连续但不可微函数，是最粗糙的 Mat\'ern 变体。$\nu=1/2$、$3/2$、$5/2$、$\infty$（RBF）
+构成光滑度从低到高的完整序列，本文通过同时测试这四种核来系统考察光滑度对仿真器性能的影响。
+
+\paragraph{（5）Rational Quadratic（RQ）核}
+\begin{equation}\label{eq:k-rq}
+  k_{\rm RQ}(\symbf{x},\symbf{x}') = \sigma^2 \left(
+    1 + \frac{r^2}{2\,\alpha\,\ell^2}
+  \right)^{-\alpha}.
+\end{equation}
+RQ 核等价于不同长度尺度 RBF 核的无穷混合，额外参数 $\alpha$ 控制混合权重分布。当
+$\alpha\to\infty$ 时退化为 RBF 核。RQ 核可建模多尺度特征而不需要显式的乘积组合。
+
+\paragraph{（6）乘积组合核}
+\begin{equation}\label{eq:k-comb}
+  k_{\rm comb}(\symbf{x},\symbf{x}') = k_{\rm M52}(\symbf{x},\symbf{x}')\cdot k_{\rm RBF}(\symbf{x},\symbf{x}').
+\end{equation}
+将两种核相乘可建模多个特征长度尺度（multi-length-scale），理论上表达力更强，但引入额外
+超参数，在有限训练样本下可能导致优化困难。
+
+所有核均附加 WhiteKernel 项 $k_{\rm white}=\sigma_n^2\,\delta(\symbf{x},\symbf{x}')$ 建模观测噪声，
+完整核形式为 $k_{\rm total}=C\cdot k_{\rm main}+k_{\rm white}$，$C$ 为常数核。
+
+上述六种核函数在光滑度谱上构成清晰的序列：Mat\'ern 族核函数通过参数 $\nu$ 控制光滑度，
+$\nu=1/2$（最粗糙）、$3/2$、$5/2$ 到 RBF（无穷光滑）。本文的核心发现之一是光滑度与
+仿真器性能呈``倒 U 型''关系——过低和过高的光滑度均不利于宇宙学仿真，中等光滑度的
+Mat\'ern$(5/2)$ 和 Mat\'ern$(3/2)$ 表现最优。
+
+% TODO: 将 03_核函数光滑度谱系图.png 放入 figures/ 后取消注释
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.95\linewidth]{03_核函数光滑度谱系图.png}
+%   \caption{核函数光滑度与仿真器性能的倒 U 型关系示意图}
+%   \label{fig:kernel-smoothness}
+% \end{figure}
+
+\section{超参数优化}\label{sec:hpo}
+
+核函数的超参数优化分为两层：内层由 sklearn 通过最大化边际似然自动优化所有核超参数
+（$\ell$、信号方差、噪声水平等），从多个随机起点重启（${\rm n\_restarts}=10$）；
+外层由 Optuna 搜索核参数初始值和正则化参数 $\alpha$（唯一不被内层优化覆盖的参数），
+以测试集 MAE 为目标。本文采用 Optuna\cite{Akiba2019}自动超参数搜索框架，使用树结构
+Parzen 估计（TPE）采样策略，在以下空间搜索：常数核振幅 $C\in[10^{-3},10^{4}]$
+（对数均匀）、白噪声水平 $\sigma_n^2\in[10^{-6},10^{-2}]$（对数均匀）、正则化参数
+$\alpha\in[10^{-6},10^{-2}]$（对数均匀）。Optuna 优化以测试集预测 MAE 为目标，搜索最优
+超参数配置；完成后，以最优超参数重新训练模型，再在全部 129 个样本上运行 LOO-CV
+计算最终精度指标。
+
+需要指出方法论上的两处数据泄露：（1）Optuna 直接以测试集 MAE 为优化目标，
+这是测试集参与模型选择的直接泄露（非``间接''泄露），严格做法应采用嵌套交叉验证
+（nested CV），在训练集内部用验证集选超参数。（2）数据归一化的均值和标准差在全部 129 个
+样本上计算（包含测试集），之后才进行训练/测试划分，测试集的分布信息泄露到了预处理阶段。
+本文未采用嵌套 CV 主要因为计算成本考量（$129\times 20=2580$ 次 GP 训练）。但由于 LOO-CV
+不重新优化超参数（${\rm optimizer}={\rm None}$），3-seed 验证显示超参数优化已完全收敛
+（$\xi(s)$ MAE 种子间标准差 ${<}10^{-6}$）。关于预处理泄露：全集归一化使测试集的分布信息
+（均值和标准差）部分泄露到训练阶段，其影响程度取决于测试集与训练集分布的差异大小
+（而非简单地与样本比例 $1/129$ 成正比）。无泄露对照实验直接量化了这一影响。
+
+为量化泄露影响，本文进行了无泄露对照实验（归一化仅在训练集 fit，Optuna 用训练集内部
+验证集）。结果表明：（1）$\xi(s)$ 的 LOO MAE 升高约 $10\%$（从 $0.00514$ 升至 $0.00593$，
+Mat\'ern 核），但核函数排序不变（Mat\'ern 仍优于 RBF），且独立测试集 MAE（$0.00551$）与
+有泄露版本接近，说明泄露虽使 LOO MAE 偏乐观，但核函数性能排序结论稳健。
+（2）$\xi(\mu)$ 的三种核 MAE 在无泄露条件下几乎相同（$0.01530$--$0.01551$），Mat\'ern
+不再显著优于 RBF，提示 $\xi(\mu)$ 上的核函数差异结论部分受泄露影响。因此，本文的核心结论
+——``$\xi(s)$ 上 Mat\'ern 显著优于 RBF''——是稳健的，而 $\xi(\mu)$ 上的核函数差异结论应
+持保留态度。每种核函数固定 20 次 Optuna 试验（${\rm n\_trials}=20$）。
+
+双层超参数优化的完整流程如下：外层 Optuna TPE 采样器在 20 次试验中智能搜索
+${\rm constant\_value}$、${\rm noise\_level}$ 和 $\alpha$ 三个超参数；每次试验内部，
+sklearn 的 L-BFGS-B 优化器从 10 个随机起点出发，最大化边际对数似然以优化 $\ell$ 等核参数；
+最终以测试集 MAE 作为 Optuna 的目标值，反馈至 TPE 模型指导下一轮搜索。
+
+% TODO: 将 04_超参数优化流程图.png 放入 figures/ 后取消注释
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.95\linewidth]{04_超参数优化流程图.png}
+%   \caption{双层超参数优化流程图（外层 Optuna TPE + 内层 sklearn L-BFGS-B）}
+%   \label{fig:hpo-flow}
+% \end{figure}
+
+\section{公平对比策略}\label{sec:fairness}
+
+\textbf{（1）随机训练/测试划分。} 固定随机种子将 129 组样本随机打乱，按 $80{:}20$ 划分为
+训练集（104 组）和测试集（25 组），避免按序截取引入的偏差（原始数据第 1 行为 fiducial
+参数点）。
+
+\textbf{（2）控制随机性。} 为避免搜索路径的随机性干扰核函数比较，六种核分别使用固定的
+Optuna 随机种子（RBF: $42$，Mat\'ern$(5/2)$: $142$，Combined: $242$，Mat\'ern$(3/2)$: $342$，
+Mat\'ern$(1/2)$: $442$，RQ: $542$），MCMC 采样使用相同的初始 walker 位置
+（${\rm np.random.seed}(42)$）。\autoref{sec:reproducibility} 的 3-seed 稳定性测试验证了
+结果对种子选择的不敏感性（$\xi(s)$ MAE 种子间标准差 ${<}10^{-6}$），证明种子差异不影响结论。
+
+\textbf{（3）等量搜索预算。} 所有核函数使用相同的 Optuna 试验次数（${\rm n\_trials}=20$）
+和 GP 优化器重启次数（${\rm n\_restarts}=10$），保证计算资源分配均等。
+
+\textbf{（4）统一数据预处理。} 所有统计量使用相同的归一化策略（减均值除标准差），确保 GP
+对不同统计量的输入/输出数据尺度一致。这一步骤对 $\xi(\mu)$ 尤为关键：$\xi(\mu)$ 的原始
+变化范围仅为 $0.87$--$1.28$，归一化后 GP 才能有效区分不同核函数的性能。
+
+\section{精度评估：留一交叉验证}\label{sec:loo}
+
+本文采用留一交叉验证（LOO-CV）作为主要精度指标。LOO-CV 在全部 129 个样本（包含训练集和
+测试集）上进行：依次留出每个样本，用剩余 128 个样本训练 GP（使用 Optuna 已优化好的
+超参数，不重新搜索），预测留出样本，计算预测误差。需要说明：LOO-CV 评估范围包含了 Optuna
+搜索阶段使用过的测试集样本，这与 \autoref{sec:hpo} 讨论的数据泄露有关。其优势在于：
+（1）不浪费数据，全部 129 个样本均参与评估；（2）对小样本量（129 组）提供稳定的泛化性能
+估计。
+\begin{equation}\label{eq:loo-mae}
+  \mathrm{LOO~MAE}
+    = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{n_{\rm bin}}
+       \sum_{j=1}^{n_{\rm bin}}
+       \left| y_{ij}^{\rm pred} - y_{ij}^{\rm true} \right|,
+\end{equation}
+同时报告每个样本 MAE 的标准误差（${\rm SE}=\mathrm{std}/\sqrt N$）。
+
+\section{MCMC 参数约束}\label{sec:mcmc}
+
+使用仿射不变采样器 emcee\cite{ForemanMackey2013}进行 MCMC 参数约束。每一步提议参数
+$(\Omega_c,\sigma_8)$，调用仿真器预测统计量，与``观测值''（fiducial 模拟结果）通过高斯
+似然比较：
+\begin{equation}\label{eq:lnL}
+  \ln \mathcal{L} = -\tfrac{1}{2}\,
+    \left[\symbf{d} - \symbf{m}(\symbf{\theta})\right]^{\!\top}
+    C^{-1}
+    \left[\symbf{d} - \symbf{m}(\symbf{\theta})\right],
+\end{equation}
+其中 $\symbf{d}$ 为观测数据向量，$\symbf{m}(\symbf{\theta})$ 为仿真器预测，$C$ 为协方差矩阵
+（从边长 $400~\mathrm{Mpc}/h$ 的模拟箱估计）。
+
+需要特别说明两点局限性：（1）本文仅拟合 $\Omega_c$ 和 $\sigma_8$ 两个参数，其余 7 个固定
+在 fiducial 值。实际巡天分析需边缘化所有参数，FoM 值将显著降低；因此本文 FoM 值仅作为
+不同核函数的相对性能比较基准，不代表 CSST 的实际预期约束能力。
+（2）协方差矩阵从 $400~\mathrm{Mpc}/h$ 箱估计但仿真器数据来自 $1000~\mathrm{Mpc}/h$ 箱，
+体积不匹配导致统计误差被高估（见 \autoref{sec:omega-c-bias} 节讨论）。
+
+MCMC 配置：40 条 walker 链，5000 步，2000 步 burn-in，约束品质因子
+\begin{equation}\label{eq:fom}
+  {\rm FoM} = \frac{1}{\pi\, \sqrt{\det(\mathrm{Cov})}\cdot 2.3},
+\end{equation}
+其中 $2.3$ 对应二维参数空间中 $68.3\%$ 置信区间的 $\Delta\chi^2$ 阈值（$1\sigma$ 等值线）。
+
+MCMC 流程：40 条 Markov 链从初始参数出发，在每一步中依次完成：提议新参数、先验范围检查、
+GP 仿真器毫秒级预测、似然函数计算和 Metropolis 接受/拒绝判断。经过 5000 步迭代后，
+丢弃前 2000 步 burn-in 样本，对剩余样本进行 Gelman--Rubin\cite{Gelman1992}收敛诊断、
+后验分布提取、等高线图绘制和 FoM 计算。本文在三种约束模式下分别运行 MCMC：仅 $\xi(s)$、
+仅 $\xi(\mu)$、以及联合 $\xi(s)+\xi(\mu)$。
+
+% TODO: 将 05_MCMC参数约束流程图.png 放入 figures/ 后取消注释
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.95\linewidth]{05_MCMC参数约束流程图.png}
+%   \caption{MCMC 宇宙学参数约束流程图}
+%   \label{fig:mcmc-flow}
+% \end{figure}

@@ -1,0 +1,97 @@
+\chapter{宇宙学理论基础}\label{chap:theory}
+
+\section{宇宙膨胀与 Friedmann 方程}\label{sec:friedmann}
+
+在广义相对论框架下，均匀各向同性宇宙（宇宙学原理）的时空度规由 Friedmann--Lema\^{i}tre--
+Robertson--Walker（FLRW）度规描述。宇宙膨胀演化由 Friedmann 方程控制。在低红移（$z<10$）下，
+辐射能量密度可忽略，方程简化为：
+\begin{equation}\label{eq:friedmann}
+  H(a)^2 = H_0^2 \left[\, \Omega_m\, a^{-3} + \Omega_{\rm DE}(a) \,\right],
+\end{equation}
+其中 $H(a)=(da/dt)/a$ 是 Hubble 参数，$a$ 是标度因子（今天 $a=1$），$\Omega_m$ 是物质密度
+参数，$\Omega_{\rm DE}(a)$ 是暗能量密度的标度因子依赖项。本文采用 CPL
+参数化\cite{Chevallier2001,Linder2003}描述暗能量状态方程：$w(a)=w_0+w_a(1-a)$，对应的
+暗能量密度演化为：
+\begin{equation}\label{eq:de-density}
+  \frac{\rho_{\rm DE}(a)}{\rho_{\rm DE}(1)}
+    = a^{-3(1+w_0+w_a)}\, \exp\!\left[-3 w_a (1-a)\right].
+\end{equation}
+当 $w_a=0$ 时退化为恒定 $w$ 模型，当 $w_0=-1$ 且 $w_a=0$ 时退化为 $\Lambda$CDM 模型
+（宇宙学常数）。完整 Friedmann 方程还应包含辐射项 $\Omega_r\, a^{-4}$，但在低红移下远小于
+物质项，通常忽略。
+
+\section{物质密度扰动与结构增长}\label{sec:growth}
+
+宇宙大尺度结构起源于早期宇宙的微小密度扰动。定义密度对比
+$\delta(\symbf{x})=[\rho(\symbf{x})-\bar\rho]/\bar\rho$，在线性微扰论框架下，其傅里叶模式
+$\delta_{\symbf{k}}$ 满足：
+\begin{equation}\label{eq:linear-growth}
+  \frac{\mathrm d^2 \delta_{\symbf{k}}}{\mathrm d t^2}
+    + 2H \,\frac{\mathrm d \delta_{\symbf{k}}}{\mathrm d t}
+    - 4\pi G\, \bar\rho\, \delta_{\symbf{k}} = 0.
+\end{equation}
+该方程的增长解定义了线性增长因子 $D(a)$。参数 $\sigma_8$ 定义为在半径 $R=8~\mathrm{Mpc}/h$
+球内的密度扰动均方根：
+\begin{equation}\label{eq:sigma8}
+  \sigma_8^2 = \frac{1}{2\pi^2}
+    \int_0^{\infty} k^2\, P(k)\, W^2(kR)\, \mathrm d k,
+\end{equation}
+其中 $W(kR)$ 是半径为 $R=8~\mathrm{Mpc}/h$ 的顶帽窗函数，$P(k)$ 是物质功率谱。$\sigma_8$ 与
+功率谱的归一化直接相关，是本文约束的核心参数之一。
+
+\section{两点关联函数与功率谱}\label{sec:two-point}
+
+两点关联函数 $\xi(r)$ 定义为密度场的二阶统计量：
+\begin{equation}\label{eq:xi-def}
+  \xi(r) = \langle \delta(\symbf{x})\, \delta(\symbf{x}+\symbf{r}) \rangle_{\symbf{x}},
+\end{equation}
+其中 $\langle\cdot\rangle_{\symbf{x}}$ 表示对位置 $\symbf{x}$ 的系综平均。$\xi(r)$ 与物质功率谱
+$P(k)$ 通过傅里叶变换互为对偶：
+\begin{equation}\label{eq:xi-fft}
+  \xi(r) = \frac{1}{2\pi^2}
+    \int_0^{\infty} P(k)\, k^2\, \frac{\sin(kr)}{kr}\, \mathrm d k.
+\end{equation}
+
+\section{红移空间畸变与 Kaiser 公式}\label{sec:rsd}
+
+星系的本动速度（peculiar velocity）沿视线方向的分量会使红移测距产生系统偏差，
+即红移空间畸变（Redshift Space Distortion，RSD）效应。在线性理论下，
+Kaiser\cite{Kaiser1987}推导出红移空间功率谱与实空间功率谱的关系：
+\begin{equation}\label{eq:kaiser}
+  P^{s}(k,\mu_k) = \left(1+\beta\,\mu_k^2\right)^2 P^{r}(k),
+\end{equation}
+其中 $\mu_k=\cos(\theta_k)$ 是傅里叶空间中波矢 $\symbf{k}$ 与视线方向的夹角余弦，
+$\beta=f/b$ 是 RSD 参数，$f\approx \Omega_m(z)^{0.55}$ 是线性增长率\cite{Linder2005}，
+$b$ 是星系偏差参数。在配置空间中，红移空间的二维关联函数 $\xi(s,\mu)$ 依赖于分离向量
+与视线方向的夹角 $\mu=\cos(\theta)$。需注意：Kaiser 公式中的 $\mu_k$ 是傅里叶空间角度
+余弦，而 $\xi(s,\mu)$ 中的 $\mu$ 是配置空间角度余弦，两者物理含义不同但取值范围相同
+（$[0,1]$），本文后续 $\xi(\mu)$ 均指配置空间中的 $\mu$。本文所用的 $\xi(\mu)$ 定义为
+将 $\xi(s,\mu)$ 在分离距离 $s$ 的 $0$ 到 $120~\mathrm{Mpc}/h$ 范围上积分：
+\begin{equation}\label{eq:xi-mu}
+  \xi(\mu) = \int_{0}^{120~\mathrm{Mpc}/h} \xi(s,\mu)\, \mathrm d s.
+\end{equation}
+共 97 个 $\mu$ bin，覆盖 $\mu\in[0,1]$，$\mu$ 间距约 $0.0104$。$\xi(\mu)$ 保留了 RSD 效应
+对 $\mu$ 的依赖性，包含结构增长率 $f$ 的信息，与 $\xi(s)$ 提供互补的宇宙学约束。
+
+\section{N 体数值模拟}\label{sec:nbody}
+
+在非线性尺度（$k>0.1~h/\mathrm{Mpc}$）上必须依赖 N 体数值模拟。N 体模拟从初始功率谱出发，
+通过 PM（Particle-Mesh）或 Tree-PM 等算法演化暗物质粒子，直接计算密度场的非线性演化。
+本文使用的模拟数据来自 Zhang 等人\cite{Zhang2023}的工作：采用拉丁超立方采样\cite{McKay1979}
+在 9 维参数空间（$\Omega_c$、$\sigma_8$、$H_0$、$\Omega_b$、$n_s$、$A_s$、$w$、$w_a$、
+$m_\nu$）中生成 129 组采样点，每组使用 $1024^3$ 个粒子在 $1000~\mathrm{Mpc}/h$ 的模拟箱
+中演化，统计量分别在 $s=0.5$ 到 $119.5~\mathrm{Mpc}/h$（$\xi(s)$，120 个 bin）和
+$\mu=0$ 到 $1$（$\xi(\mu)$，97 个 bin）上计算。fiducial 参数为：$\Omega_c=0.26072$、
+$\sigma_8=0.81006$、$H_0=67.66~\mathrm{km/s/Mpc}$、$\Omega_b=0.04898$、$n_s=0.9665$、
+$A_s=2.105\times 10^{-9}$、$w=-1.0$、$w_a=0.0$、$m_\nu=0.06~\mathrm{eV}$。
+协方差矩阵从边长 $400~\mathrm{Mpc}/h$ 的模拟箱中估计。需要说明的是，MCMC 约束中使用的
+``观测值''（ground truth）来自边长 $600~\mathrm{Mpc}/h$ 的独立模拟箱
+（${\rm gt\_boxsize}=600$），与训练数据（$1000~\mathrm{Mpc}/h$ 箱）不同。由于宇宙方差和
+分辨率差异，同一参数下不同箱体的关联函数存在系统偏差，约 $51.5\%$ 的 $\xi(\mu)$ bin 和
+$16.7\%$ 的 $\xi(s)$ bin 落在训练数据的取值范围之外。这意味着仿真器在这些 bin 上需要外推
+而非内插，MCMC 约束的绝对结果受此影响（详见 \autoref{sec:omega-c-bias} 讨论），但不影响
+不同核函数间的相对性能比较。此外，上游数据管线对每个模拟的关联函数做了逐样本均值归一化
+（$\xi\to\xi/\mathrm{mean}(\xi)$），使得每个样本在所有 bin 上的均值恰好为 $1$。这意味着
+仿真器学习的是关联函数的形状而非绝对幅度。由于 $\sigma_8$ 主要控制关联函数的整体振幅，
+归一化后 $\sigma_8$ 的信号被削弱，这是 $\xi(\mu)$ 约束能力较弱和 $\sigma_8$ 偏移较大的
+深层原因之一。

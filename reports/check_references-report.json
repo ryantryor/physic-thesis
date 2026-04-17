@@ -1,0 +1,1813 @@
+{
+  "summary": {
+    "checker": "check_references",
+    "ruleset": "university-generic",
+    "errors": 200,
+    "warnings": 0,
+    "infos": 0,
+    "status": "FAIL",
+    "files_scanned": 10
+  },
+  "findings": [
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter1.tex",
+      "line": 7,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter1.tex",
+      "line": 7,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter1.tex",
+      "line": 7,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter1.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter1.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref05",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref06",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref11",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter1.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref13",
+      "file": "chapters/chapter1.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref14",
+      "file": "chapters/chapter1.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref15",
+      "file": "chapters/chapter1.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter1.tex",
+      "line": 31,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref11",
+      "file": "chapters/chapter1.tex",
+      "line": 31,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter1.tex",
+      "line": 33,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref17",
+      "file": "chapters/chapter1.tex",
+      "line": 33,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref18",
+      "file": "chapters/chapter1.tex",
+      "line": 33,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter1.tex",
+      "line": 33,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter1.tex",
+      "line": 33,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref19",
+      "file": "chapters/chapter1.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref05",
+      "file": "chapters/chapter1.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref06",
+      "file": "chapters/chapter1.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter1.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref20",
+      "file": "chapters/chapter1.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref21",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref23",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref24",
+      "file": "chapters/chapter1.tex",
+      "line": 39,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref25",
+      "file": "chapters/chapter1.tex",
+      "line": 41,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref26",
+      "file": "chapters/chapter1.tex",
+      "line": 41,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref27",
+      "file": "chapters/chapter1.tex",
+      "line": 41,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref28",
+      "file": "chapters/chapter1.tex",
+      "line": 41,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref13",
+      "file": "chapters/chapter1.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref24",
+      "file": "chapters/chapter1.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref29",
+      "file": "chapters/chapter1.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref30",
+      "file": "chapters/chapter1.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter1.tex",
+      "line": 47,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter1.tex",
+      "line": 47,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref14",
+      "file": "chapters/chapter1.tex",
+      "line": 47,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref15",
+      "file": "chapters/chapter1.tex",
+      "line": 47,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref14",
+      "file": "chapters/chapter1.tex",
+      "line": 47,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter1.tex",
+      "line": 49,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter1.tex",
+      "line": 49,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref15",
+      "file": "chapters/chapter1.tex",
+      "line": 49,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter1.tex",
+      "line": 51,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter1.tex",
+      "line": 51,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter1.tex",
+      "line": 51,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref14",
+      "file": "chapters/chapter1.tex",
+      "line": 51,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref15",
+      "file": "chapters/chapter1.tex",
+      "line": 51,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter1.tex",
+      "line": 55,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter1.tex",
+      "line": 55,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref13",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref29",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref30",
+      "file": "chapters/chapter1.tex",
+      "line": 57,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter1.tex",
+      "line": 59,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter1.tex",
+      "line": 59,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter1.tex",
+      "line": 59,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter2.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter2.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter2.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 23,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter2.tex",
+      "line": 23,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter2.tex",
+      "line": 25,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter2.tex",
+      "line": 25,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref28",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter2.tex",
+      "line": 27,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref26",
+      "file": "chapters/chapter2.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter2.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref02",
+      "file": "chapters/chapter2.tex",
+      "line": 35,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref29",
+      "file": "chapters/chapter2.tex",
+      "line": 37,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref30",
+      "file": "chapters/chapter2.tex",
+      "line": 37,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter2.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter2.tex",
+      "line": 43,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref25",
+      "file": "chapters/chapter2.tex",
+      "line": 45,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref30",
+      "file": "chapters/chapter2.tex",
+      "line": 45,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter2.tex",
+      "line": 53,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref11",
+      "file": "chapters/chapter2.tex",
+      "line": 53,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref19",
+      "file": "chapters/chapter2.tex",
+      "line": 63,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref20",
+      "file": "chapters/chapter2.tex",
+      "line": 63,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref19",
+      "file": "chapters/chapter2.tex",
+      "line": 67,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref05",
+      "file": "chapters/chapter2.tex",
+      "line": 77,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref05",
+      "file": "chapters/chapter2.tex",
+      "line": 81,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref06",
+      "file": "chapters/chapter2.tex",
+      "line": 83,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref06",
+      "file": "chapters/chapter2.tex",
+      "line": 83,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter2.tex",
+      "line": 85,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter2.tex",
+      "line": 85,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref20",
+      "file": "chapters/chapter2.tex",
+      "line": 91,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref20",
+      "file": "chapters/chapter2.tex",
+      "line": 95,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter2.tex",
+      "line": 107,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref11",
+      "file": "chapters/chapter2.tex",
+      "line": 107,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref33",
+      "file": "chapters/chapter2.tex",
+      "line": 113,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter2.tex",
+      "line": 124,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter2.tex",
+      "line": 130,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref21",
+      "file": "chapters/chapter2.tex",
+      "line": 134,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref21",
+      "file": "chapters/chapter2.tex",
+      "line": 139,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter2.tex",
+      "line": 145,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref23",
+      "file": "chapters/chapter2.tex",
+      "line": 155,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref23",
+      "file": "chapters/chapter2.tex",
+      "line": 161,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref21",
+      "file": "chapters/chapter2.tex",
+      "line": 167,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref34",
+      "file": "chapters/chapter2.tex",
+      "line": 183,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 183,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter2.tex",
+      "line": 183,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 185,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter2.tex",
+      "line": 185,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 189,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 193,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 213,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref35",
+      "file": "chapters/chapter2.tex",
+      "line": 225,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref35",
+      "file": "chapters/chapter2.tex",
+      "line": 233,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter2.tex",
+      "line": 239,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 245,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter2.tex",
+      "line": 245,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref12",
+      "file": "chapters/chapter2.tex",
+      "line": 245,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter2.tex",
+      "line": 247,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter2.tex",
+      "line": 247,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter2.tex",
+      "line": 253,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter2.tex",
+      "line": 253,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter2.tex",
+      "line": 265,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter2.tex",
+      "line": 275,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter2.tex",
+      "line": 279,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref26",
+      "file": "chapters/chapter3.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref36",
+      "file": "chapters/chapter3.tex",
+      "line": 9,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 11,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 13,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 15,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 17,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter3.tex",
+      "line": 17,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter3.tex",
+      "line": 48,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref37",
+      "file": "chapters/chapter3.tex",
+      "line": 48,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref38",
+      "file": "chapters/chapter3.tex",
+      "line": 48,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref39",
+      "file": "chapters/chapter3.tex",
+      "line": 48,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter3.tex",
+      "line": 68,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref01",
+      "file": "chapters/chapter3.tex",
+      "line": 68,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref37",
+      "file": "chapters/chapter3.tex",
+      "line": 68,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter3.tex",
+      "line": 76,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref03",
+      "file": "chapters/chapter3.tex",
+      "line": 102,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter3.tex",
+      "line": 131,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter3.tex",
+      "line": 131,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter3.tex",
+      "line": 141,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter3.tex",
+      "line": 141,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref21",
+      "file": "chapters/chapter3.tex",
+      "line": 141,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter3.tex",
+      "line": 143,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref40",
+      "file": "chapters/chapter3.tex",
+      "line": 145,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter3.tex",
+      "line": 161,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter3.tex",
+      "line": 204,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter3.tex",
+      "line": 204,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter3.tex",
+      "line": 204,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter3.tex",
+      "line": 284,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref40",
+      "file": "chapters/chapter3.tex",
+      "line": 298,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter3.tex",
+      "line": 306,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref32",
+      "file": "chapters/chapter3.tex",
+      "line": 306,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref40",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref05",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref08",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref35",
+      "file": "chapters/chapter3.tex",
+      "line": 346,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter4.tex",
+      "line": 97,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref11",
+      "file": "chapters/chapter4.tex",
+      "line": 97,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter4.tex",
+      "line": 121,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter4.tex",
+      "line": 121,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter4.tex",
+      "line": 127,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref17",
+      "file": "chapters/chapter4.tex",
+      "line": 127,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter4.tex",
+      "line": 131,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter4.tex",
+      "line": 151,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref35",
+      "file": "chapters/chapter4.tex",
+      "line": 155,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref35",
+      "file": "chapters/chapter4.tex",
+      "line": 155,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter4.tex",
+      "line": 157,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref10",
+      "file": "chapters/chapter4.tex",
+      "line": 171,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter4.tex",
+      "line": 171,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref17",
+      "file": "chapters/chapter4.tex",
+      "line": 171,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref18",
+      "file": "chapters/chapter4.tex",
+      "line": 171,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter4.tex",
+      "line": 175,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref07",
+      "file": "chapters/chapter4.tex",
+      "line": 175,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref16",
+      "file": "chapters/chapter4.tex",
+      "line": 201,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref18",
+      "file": "chapters/chapter4.tex",
+      "line": 201,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref09",
+      "file": "chapters/chapter5.tex",
+      "line": 23,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref31",
+      "file": "chapters/chapter5.tex",
+      "line": 212,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref22",
+      "file": "chapters/chapter5.tex",
+      "line": 345,
+      "suggestion": "Add the missing key or fix the cite command"
+    },
+    {
+      "status": "FAIL",
+      "severity": "error",
+      "code": "REF_MISSING_KEY",
+      "message": "Citation key not found in bibliography: ref04",
+      "file": "chapters/chapter5.tex",
+      "line": 452,
+      "suggestion": "Add the missing key or fix the cite command"
+    }
+  ]
+}

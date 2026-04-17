@@ -1,0 +1,48 @@
+\chapter{总结与展望}\label{chap:conclusion}
+
+\section{主要结论}\label{sec:conclusions}
+
+本文基于 129 组高精度 N 体模拟，系统比较了 GP 宇宙学仿真器中六种核函数的性能，主要结论
+如下：
+
+\begin{enumerate}
+  \item $\xi(s)$ 上核函数性能形成明确层级：
+    $\mathrm{Mat\acute{e}rn}(5/2)\approx\mathrm{Mat\acute{e}rn}(3/2)\approx{\rm Combined}
+    > {\rm RQ} > {\rm RBF} \gg \mathrm{Mat\acute{e}rn}(1/2)$。Mat\'ern 族（$\nu=5/2$ 和
+    $3/2$）显著优于 RBF 核（$p<0.0001$），且二者间无统计显著差异（$p=0.81$），表明
+    $\nu=5/2$ 和 $3/2$ 均为合适选择。Mat\'ern$(1/2)$ 因过度粗糙表现最差（MAE 比 RBF 高
+    $45\%$）。推荐 Mat\'ern$(\nu=5/2)$ 作为默认核函数。$\xi(\mu)$ 上的核函数差异在无泄露
+    条件下不显著，需持保留态度。
+  \item 光滑度-性能关系呈非单调``倒 U 形''：过高光滑度（RBF，$\nu=\infty$）导致欠拟合，
+    过低光滑度（$\nu=1/2$）导致过拟合，$\nu=5/2$ 和 $3/2$ 取得最优偏差-方差平衡。RQ 核和
+    组合核（Mat\'ern $\times$ RBF）均未显著超越单纯 Mat\'ern 核，更复杂的核结构并不必然
+    带来优势。
+  \item $\xi(s)$ 仿真器精度（MAE/$\sigma_{\rm stat}=3.4\%$）满足精密宇宙学要求；
+    $\xi(\mu)$ 仿真器精度（$15.8\%$）有待改进，主要受限于逐样本均值归一化削弱了振幅信息
+    和低信噪比。
+  \item 联合约束 FoM 排序：Mat\'ern$(5/2)$ ($58.9$) ${}>{}$ Mat\'ern$(3/2)$ ($58.3$)
+    ${}>{}$ RQ ($57.7$) ${}>{}$ Mat\'ern$(1/2)$ ($56.3$) ${}>{}$ Combined ($50.4$)
+    ${}>{}$ RBF ($49.3$)。Mat\'ern$(5/2)$ 的联合 FoM 相比 $\xi(s)$ 单独提升 $25\%$，
+    表明 $\xi(\mu)$ 包含互补信息。FoM 绝对值因协方差矩阵高估不具物理意义，MAE 是核函数
+    排序最可靠的依据。
+  \item 所有 18 组 MCMC 运行（6 核 $\times$ 3 模式，每组保留 3000 后-burn-in 步）均通过
+    Gelman--Rubin 收敛诊断（$\hat R<1.01$），有效独立样本数约 $64$--$99$。
+  \item 3-seed 重复性验证和无泄露对照实验共同确认了 $\xi(s)$ 上核函数排序结论的稳健性。
+\end{enumerate}
+
+\section{未来展望}\label{sec:future-work}
+
+\begin{enumerate}
+  \item \textbf{探索更多核函数及组合方式。} 如 Spectral Mixture 核、周期核、以及核函数的
+    加法组合（而非乘法），系统评估更广泛的核函数空间。
+  \item \textbf{引入 ARD 核。} 采用各向异性核函数（Automatic Relevance Determination），
+    为每个参数维度学习独立的 length\_scale，有望显著改善仿真器对不同参数敏感度的适应性。
+  \item \textbf{高维参数约束。} 将 MCMC 拟合扩展到全部 9 个参数，评估边缘化参数后核函数
+    选择的影响。
+  \item \textbf{改进 $\xi(\mu)$ 仿真器。} 探索 PCA 降维、取消逐样本均值归一化等预处理
+    策略，保留 $\sigma_8$ 的振幅信息。
+  \item \textbf{应用于 CSST 数据。} 将优化后的仿真器与 CSST 模拟数据结合，为 CSST 科学
+    目标提供技术支撑。
+  \item \textbf{与神经网络仿真器比较。} 系统评估 GP 仿真器与 MLP/CNN 在精度、不确定性
+    估计和计算效率上的优劣。
+\end{enumerate}

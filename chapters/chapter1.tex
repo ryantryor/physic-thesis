@@ -1,0 +1,86 @@
+\chapter{绪论}\label{chap:intro}
+
+\section{研究背景与意义}\label{sec:bg}
+
+宇宙学的核心任务之一是精确测量描述宇宙组成和演化的基本参数，包括冷暗物质密度参数
+$\Omega_c$、物质密度扰动振幅 $\sigma_8$、暗能量状态方程参数 $w$ 等。21 世纪以来，
+以宇宙微波背景辐射（CMB）、重子声学振荡（BAO）和弱引力透镜为代表的观测手段极大地推进了
+精确宇宙学的发展\cite{Planck2020,Riess1998}。当前，以中国空间站望远镜（CSST）\cite{Zhan2011}、
+暗能量光谱仪（DESI）、Euclid 空间望远镜为代表的新一代大型巡天项目即将或已经开始运行，
+预计将覆盖数十亿星系，在前所未有的统计精度下探测宇宙大尺度结构。
+
+在大尺度结构研究中，两点关联函数 $\xi(r)$ 及其傅里叶对偶——功率谱 $P(k)$
+是描述物质密度场统计性质的基本工具。在线性理论框架下，这些统计量可以通过 Boltzmann 方程组
+（如 CAMB、CLASS）精确计算。然而，在非线性尺度（$k>0.1~h/\mathrm{Mpc}$），微扰论失效，
+必须依赖 N 体数值模拟来获取准确的理论预测。单次高分辨率 N 体模拟可能需要数千 CPU 核时，
+在宇宙学参数空间中密集采样极其昂贵。
+
+宇宙学仿真器（cosmological emulator）应运而生：在参数空间中通过拉丁超立方采样\cite{McKay1979}
+选取有限组代表性样本，在每个样本点运行高精度 N 体模拟，再训练机器学习模型（通常是高斯过程）
+插值预测任意参数下的统计量。代表性工作包括 Cosmic Emulator\cite{Heitmann2009}、
+EuclidEmulator2\cite{Knabenhans2019} 等。
+
+\section{国内外研究现状}\label{sec:related}
+
+\subsection{宇宙学仿真器的发展}
+
+高斯过程（GP）因其非参数特性和能提供预测不确定性估计的优势，是宇宙学仿真器的主流建模方法。
+Heitmann 等人\cite{Heitmann2009}开发的 Cosmic Emulator 基于 37 组 N 体模拟构建了物质功率谱
+的 GP 仿真器，开创了该领域。Knabenhans 等人\cite{Knabenhans2019}在 EuclidEmulator2 中
+进一步将仿真器推广到含中微子质量的高维参数空间，精度达 $1\%$ 以内。Nishimichi 等
+人\cite{Nishimichi2019}基于 Dark Quest 项目构建了暗物质晕统计量的仿真器，覆盖了非线性结构
+形成的多个方面。Villaescusa-Navarro 等人\cite{Villaescusa2021}发起的 CAMELS 项目提供了
+数千组流体动力学模拟，极大地推动了仿真器方法论的发展。
+
+近年来，基于神经网络的仿真器方法快速发展。Arico 等人\cite{Arico2021}使用神经网络构建了
+Bacco 仿真器，在功率谱预测上达到亚百分比精度。Spurio Mancini 等人\cite{Mancini2022}开发的
+CosmoPower 采用深度学习直接学习功率谱与参数的映射，计算速度比传统 Boltzmann 求解器快
+数个数量级。然而，GP 仿真器在小样本（${<}1000$ 组模拟）场景下仍具优势，且能自然提供预测
+不确定性。
+
+\subsection{GP 核函数选择的研究}
+
+在机器学习领域，核函数选择是 GP 回归的核心问题之一。Rasmussen 和 Williams\cite{Rasmussen2006}
+的经典著作系统介绍了 GP 回归和主要核函数族的性质。Stein\cite{Stein1999}从空间统计学角度
+论证了 Mat\'ern 核族相比 RBF 核在实际数据建模中的优势。Duvenaud\cite{Duvenaud2014}探索了
+核函数的自动构建方法，通过组合基础核函数搜索最优核结构。然而，这些通用研究未针对宇宙学
+数据的特殊性（高维参数空间、弱信号、强退化）进行考察。
+
+\subsection{面向 CSST 的仿真器研究}
+
+中国空间站望远镜（CSST）\cite{Zhan2011}是我国旗舰级空间天文项目，预计覆盖约 17500 平方度
+天区。Gong 等人\cite{Gong2019}和 Lin 等人\cite{Lin2022}围绕 CSST 的弱引力透镜和星系成团性
+开展了预测研究。Zhang 等人\cite{Zhang2023}基于 129 组高精度 N 体模拟构建了面向 CSST 的两点
+关联函数仿真器，本文工作即在此基础上开展。然而，包括 Zhang 等人在内的现有工作大多采用固定
+的 RBF 核函数，对核函数选择缺乏系统性的比较研究，尤其缺乏统计显著性检验层面的定量分析。
+不同核函数隐含了对目标函数光滑性的不同先验假设，这直接影响仿真器的预测精度和参数约束能力。
+本文旨在填补这一空白，为 CSST 数据分析管线中的仿真器设计提供定量依据。
+
+\section{研究内容与创新点}\label{sec:contrib}
+
+本文主要研究内容：（1）基于 129 组高精度 N 体模拟，构建面向 CSST 的 GP 宇宙学仿真器；
+（2）系统比较六种核函数：RBF、Mat\'ern$(\nu=5/2)$、Mat\'ern$(\nu=3/2)$、
+Mat\'ern$(\nu=1/2)$、Rational Quadratic（RQ）和 Mat\'ern$\times$RBF 乘积组合核；
+（3）通过 MCMC 采样获得宇宙学参数约束，评估核函数选择的影响；（4）进行全面的统计诊断分析。
+
+创新点：（1）首次对宇宙学仿真器核函数进行含统计显著性检验的系统比较；（2）严格公平对比策略
+（随机划分、独立种子、等预算、3-seed 重复性验证）；（3）从仿真器精度、参数约束、MCMC 收敛
+等多维度全面评估；（4）提供可操作的核函数选择建议，为 CSST 数据分析提供技术支撑。
+
+本文的总体技术路线如下：从 N 体模拟数据出发，经预处理后训练六种核函数的 GP 仿真器，
+通过 Optuna 超参数优化、LOO-CV 泛化评估和 Wilcoxon 统计检验进行公平的模型选择，
+最终用 MCMC 采样获得宇宙学参数约束并计算 FoM 品质因子。
+
+% TODO: 将 01_技术路线图.png 放入 figures/ 后取消注释
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.95\linewidth]{01_技术路线图.png}
+%   \caption{总体技术路线图}
+%   \label{fig:roadmap}
+% \end{figure}
+
+\section{论文结构}\label{sec:outline}
+
+本文共六章：第一章绪论；第二章宇宙学理论基础（含 FLRW 度规、结构增长、RSD）；第三章研究方法
+（GP 回归、核函数、公平对比策略、MCMC）；第四章实验结果（精度、显著性检验、MAE 物理含义、
+MCMC 约束、收敛诊断、重复性验证）；第五章讨论；第六章总结与展望。

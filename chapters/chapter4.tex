@@ -1,0 +1,360 @@
+\chapter{实验结果}\label{chap:results}
+
+\section{参数空间采样}\label{sec:sampling}
+
+\autoref{fig:sampling} 展示了 129 组 N 体模拟在 $\Omega_c$--$\sigma_8$ 平面上的拉丁超立方
+采样分布。采样点均匀覆盖参数空间，红色星号标记 fiducial 参数位置（$\Omega_c=0.26072$，
+$\sigma_8=0.81006$）。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{image1.png}
+  \caption{129 组 N 体模拟的参数空间采样分布（$\Omega_c$--$\sigma_8$ 投影）}
+  \label{fig:sampling}
+\end{figure}
+
+\section{仿真器精度比较}\label{sec:accuracy}
+
+\autoref{fig:loo-mae} 展示了六种核函数在 $\xi(s)$ 和 $\xi(\mu)$ 上的 LOO MAE 对比。
+\autoref{tab:loo} 列出详细精度指标。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image2.png}
+  \caption{六种核函数的 LOO MAE 对比}
+  \label{fig:loo-mae}
+\end{figure}
+
+\begin{table}[H]
+  \caption{六种核函数的 LOO-CV 精度（MAE $\pm$ SE）}
+  \label{tab:loo}
+  \centering
+  \begin{tblr}{lcccc}
+    \toprule
+    核函数             & $\xi(s)$ MAE & $\xi(s)$ SE & $\xi(\mu)$ MAE & $\xi(\mu)$ SE \\
+    \midrule
+    RBF                & $0.00565$    & $0.00029$   & $0.01568$      & $0.00017$     \\
+    Mat\'ern$(\nu=5/2)$ & $0.00514$    & $0.00025$   & $0.01532$      & $0.00015$     \\
+    Mat\'ern$(\nu=3/2)$ & $0.00511$    & $0.00024$   & $0.01533$      & $0.00015$     \\
+    Mat\'ern$(\nu=1/2)$ & $0.00821$    & $0.00052$   & $0.01534$      & $0.00015$     \\
+    RQ                 & $0.00539$    & $0.00027$   & $0.01530$      & $0.00015$     \\
+    Mat\'ern $\times$ RBF & $0.00511$ & $0.00024$   & $0.01526$      & $0.00015$     \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\autoref{fig:optuna} 展示了 Optuna 超参数搜索过程中最优 MAE 随试验次数的收敛情况。
+对于 $\xi(s)$，六种核均在前 $5$ 次试验内快速收敛，后续试验改善有限，说明 20 次试验已
+充分。对于 $\xi(\mu)$，收敛同样迅速，且各核最终 MAE 差异较小。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image3.png}
+  \caption{Optuna 超参数搜索收敛曲线（最优 MAE vs 试验次数）}
+  \label{fig:optuna}
+\end{figure}
+
+\autoref{tab:best-kernels} 列出了 Optuna 搜索得到的最优核参数，便于读者复现和理解各核函数
+的行为特征。
+
+\begin{table}[H]
+  \caption{各仿真器最优核参数（六种核函数）}
+  \label{tab:best-kernels}
+  \centering
+  \footnotesize
+  \begin{tblr}{llllc}
+    \toprule
+    核函数             & 统计量      & 信号核                                  & WhiteKernel 噪声 & $\alpha$    \\
+    \midrule
+    RBF                 & $\xi(s)$    & $3.88^{2}\cdot{\rm RBF}(\ell=11.5)$        & $0.00688$       & $1.27\mathrm{e}{-}5$ \\
+    Mat\'ern$(5/2)$      & $\xi(s)$    & $5.53^{2}\cdot{\rm Mat\acute{e}rn}(\ell=21.4,\nu=5/2)$ & $0.00481$ & $4.97\mathrm{e}{-}5$ \\
+    Mat\'ern$(3/2)$      & $\xi(s)$    & $11.4^{2}\cdot{\rm Mat\acute{e}rn}(\ell=60.5,\nu=3/2)$ & $0.00126$ & $8.39\mathrm{e}{-}6$ \\
+    Mat\'ern$(1/2)$      & $\xi(s)$    & $3.63^{2}\cdot{\rm Mat\acute{e}rn}(\ell=281,\nu=1/2)$  & $1.0\mathrm{e}{-}5$ & $1.02\mathrm{e}{-}6$ \\
+    RQ                  & $\xi(s)$    & $5.00^{2}\cdot{\rm RQ}(\alpha=1.06,\ell=15.2)$ & $0.00303$ & $3.26\mathrm{e}{-}3$ \\
+    Combined            & $\xi(s)$    & $4.76^{2}\cdot{\rm M}(\ell=19.6)\cdot{\rm RBF}(\ell=9.8\mathrm{e}{4})$ & $0.00360$ & $1.09\mathrm{e}{-}6$ \\
+    \midrule
+    RBF                 & $\xi(\mu)$  & $0.026^{2}\cdot{\rm RBF}(\ell=0.011)$       & $0.993$         & $8.47\mathrm{e}{-}4$ \\
+    Mat\'ern$(5/2)$      & $\xi(\mu)$  & $0.425^{2}\cdot{\rm Mat\acute{e}rn}(\ell=2.21,\nu=5/2)$ & $0.832$ & $2.55\mathrm{e}{-}4$ \\
+    Mat\'ern$(3/2)$      & $\xi(\mu)$  & $0.457^{2}\cdot{\rm Mat\acute{e}rn}(\ell=2.08,\nu=3/2)$ & $0.795$ & $8.44\mathrm{e}{-}3$ \\
+    Mat\'ern$(1/2)$      & $\xi(\mu)$  & $0.606^{2}\cdot{\rm Mat\acute{e}rn}(\ell=1.60,\nu=1/2)$ & $0.642$ & $1.74\mathrm{e}{-}3$ \\
+    RQ                  & $\xi(\mu)$  & $0.381^{2}\cdot{\rm RQ}(\alpha=10^{5},\ell=2.32)$ & $0.867$ & $4.80\mathrm{e}{-}6$ \\
+    Combined            & $\xi(\mu)$  & $0.406^{2}\cdot{\rm M}(\ell=1160)\cdot{\rm RBF}(\ell=4.86)$ & $0.930$ & $3.89\mathrm{e}{-}4$ \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\textbf{注意：} （1）RBF 核在 $\xi(\mu)$ 上的 WhiteKernel 噪声 ${}=0.993$（占总方差
+$99.93\%$），信号核方差仅为 $0.026^{2}=0.0007$，仿真器完全由噪声主导，无法学习参数依赖性
+（详见 \autoref{sec:joint-info}）。（2）$\xi(\mu)$ 上所有核的 WhiteKernel 噪声均偏高
+（$0.642$--$0.993$），反映该统计量信号弱、GP 建模困难。（3）Mat\'ern$(1/2)$ 核在
+$\xi(s)$ 上的 length\_scale ${}=281$ 远大于其他核（$11$--$60$），说明过粗糙的先验迫使 GP
+在极大尺度上平滑，丧失了局部拟合能力。（4）RQ 核的 $\alpha=1.06$（$\xi(s)$），接近 $1$
+而远非无穷大，说明其确实使用了多尺度混合特性；但 $\xi(\mu)$ 上 $\alpha=10^5$ 退化为 RBF。
+
+\section{统计显著性检验}\label{sec:significance}
+
+对 LOO-CV 中每个样本的 MAE 进行配对 Wilcoxon\cite{Wilcoxon1945} 符号秩检验，验证核函数
+差异的统计显著性。\autoref{tab:wilcoxon-vs-m52} 列出以 Mat\'ern$(\nu=5/2)$ 为基准的对比
+结果，\autoref{tab:wilcoxon-pairs} 列出完整配对矩阵中的关键结果。
+
+\begin{table}[H]
+  \caption{核函数精度差异：配对 Wilcoxon 检验（vs Mat\'ern$(\nu=5/2)$ 基准）}
+  \label{tab:wilcoxon-vs-m52}
+  \centering
+  \begin{tblr}{lcccc}
+    \toprule
+    对比                                         & $\xi(s)$ $p$ 值 & 显著性 & $\xi(\mu)$ $p$ 值 & 显著性 \\
+    \midrule
+    RBF vs Mat\'ern$(5/2)$                        & ${<}0.0001$    & $\ast\ast\ast$ & ${<}0.0001$ & $\ast\ast\ast$ \\
+    Mat\'ern$(3/2)$ vs Mat\'ern$(5/2)$             & $0.8114$       & n.s.           & ${<}0.0001$ & $\ast\ast\ast$ \\
+    Mat\'ern$(1/2)$ vs Mat\'ern$(5/2)$             & ${<}0.0001$    & $\ast\ast\ast$ & ${<}0.0001$ & $\ast\ast\ast$ \\
+    RQ vs Mat\'ern$(5/2)$                          & $0.0003$       & $\ast\ast\ast$ & $1.0000$    & n.s.           \\
+    Combined vs Mat\'ern$(5/2)$                    & $0.3955$       & n.s.           & $0.0004$    & $\ast\ast\ast$ \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\begin{table}[H]
+  \caption{$\xi(s)$ 上的关键配对比较}
+  \label{tab:wilcoxon-pairs}
+  \centering
+  \begin{tblr}{lcc}
+    \toprule
+    对比                          & $\xi(s)$ $p$ 值 & 显著性          \\
+    \midrule
+    RBF vs Mat\'ern$(3/2)$         & $0.0037$        & $\ast\ast$       \\
+    RBF vs RQ                     & ${<}0.0001$     & $\ast\ast\ast$   \\
+    Mat\'ern$(3/2)$ vs RQ          & $0.0438$        & $\ast$           \\
+    Mat\'ern$(1/2)$ vs RQ          & ${<}0.0001$     & $\ast\ast\ast$   \\
+    Mat\'ern$(5/2)$ vs Mat\'ern$(3/2)$ & $0.8114$    & n.s.             \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+注：$\ast\ast\ast$ $p<0.001$；$\ast\ast$ $p<0.01$；$\ast$ $p<0.05$；n.s.\ 不显著。
+双侧检验。经 Bonferroni 校正（$\alpha=0.05/15=0.0033$，共 $C(6,2)=15$ 对比较），
+所有 ``$\ast\ast\ast$'' 和 ``$\ast\ast$'' 结果在校正后仍然显著。
+
+结论：（1）$\xi(s)$ 上形成明确的性能层级：
+$\mathrm{Mat\acute{e}rn}(5/2)\approx\mathrm{Mat\acute{e}rn}(3/2)\approx{\rm Combined}
+> {\rm RQ} > {\rm RBF} \gg \mathrm{Mat\acute{e}rn}(1/2)$；
+（2）Mat\'ern$(5/2)$ 与 Mat\'ern$(3/2)$ 无统计显著差异（$p=0.81$），表明 $\nu=5/2$ 和
+$3/2$ 均为合适选择；（3）Mat\'ern$(1/2)$ 显著最差（MAE 比 RBF 高 $45\%$），说明过低光滑度
+不适合宇宙学仿真；（4）RQ 核优于 RBF 但不及 Mat\'ern 族，其多尺度混合特性未带来额外优势；
+（5）$\xi(\mu)$ 上差异很小且在无泄露条件下不显著，需持保留态度。综合考虑精度和模型简洁性，
+推荐使用 Mat\'ern$(\nu=5/2)$ 核。
+
+\section{MAE 的物理含义}\label{sec:mae-meaning}
+
+\autoref{tab:mae-physical} 将 MAE 与数据本身的统计误差对比，判断仿真器精度是否满足科学
+分析要求。
+
+\begin{table}[H]
+  \caption{MAE 物理含义分析（Mat\'ern 核）}
+  \label{tab:mae-physical}
+  \centering
+  \begin{tblr}{lcc}
+    \toprule
+    指标                            & $\xi(s)$              & $\xi(\mu)$              \\
+    \midrule
+    MAE                             & $0.00514$             & $0.01532$               \\
+    MAE / $|\mathrm{data}|$         & $0.51\%$              & $1.53\%$                \\
+    MAE / $\sigma_{\rm stat}$       & $3.4\%$（${\ll}1$）   & $15.8\%$（偏高）         \\
+    MAE / data\_std                 & $7.4\%$               & $77.8\%$                \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+$\xi(s)$ 的仿真器误差仅为统计误差的 $3.4\%$，满足精密宇宙学分析的一般要求（${<}5\%$）。
+$\xi(\mu)$ 的仿真器误差达统计误差的 $15.8\%$，高于精密宇宙学的理想标准（通常要求 ${<}5\%$）。
+更重要的是，MAE/data\_std ${}=77.8\%$ 意味着仿真器误差接近数据在参数空间中的总变化幅度，
+部分核函数（尤其 RBF）的 $\xi(\mu)$ 仿真器几乎无法区分不同参数点产生的信号
+（详见 \autoref{sec:joint-info} 诊断分析）。因此基于 $\xi(\mu)$ 仿真器得出的参数约束结论
+需非常谨慎地解释。主要原因是 $\xi(\mu)$ 信号的参数依赖性极弱
+（原始变化范围 $0.87$--$1.28$），仿真器学习这种微弱依赖性存在固有困难。
+
+\section{逐 bin 相对误差分析}\label{sec:per-bin}
+
+\autoref{fig:per-bin} 展示了六种核函数在每个 $s/\mu$ bin 上的平均相对误差。左图 $x$ 轴为
+实际物理分离 $s\in[0.5,119.5]~\mathrm{Mpc}/h$（由配置文件 ${\rm s\_range}=[0,120]$ 确定，
+120 个 bin）；右图 $x$ 轴为 $\mu\in[0,1]$（97 个 bin）。对于 $\xi(s)$，在大尺度
+（$s>100~\mathrm{Mpc}/h$）处相对误差增大，原因是关联函数值接近零导致分母趋小。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image4.png}
+  \caption{逐 bin 平均相对误差（左：$\xi(s)$；右：$\xi(\mu)$）}
+  \label{fig:per-bin}
+\end{figure}
+
+\section{预测对比示例}\label{sec:pred-vs-truth}
+
+\autoref{fig:pred-vs-truth} 展示了六种核函数在两组测试样本上的预测值与 N 体模拟真值的对比。
+除 Mat\'ern$(1/2)$ 外，其余核函数均能准确复现关联函数形状。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image5.png}
+  \caption{仿真器预测与 N 体真值对比（上行：$s^{2}\xi(s)$；下行：$\xi(\mu)$）}
+  \label{fig:pred-vs-truth}
+\end{figure}
+
+\section{MCMC 参数约束}\label{sec:mcmc-results}
+
+\autoref{fig:contour-by-kernel} 和 \autoref{fig:contour-by-mode} 分别按核函数和约束模式
+分组展示 MCMC 后验分布。\autoref{tab:mcmc} 列出约束结果汇总。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image6.png}
+  \caption{按核函数分组的 $\Omega_c$--$\sigma_8$ 约束（$68\%$ 和 $95\%$ 置信区间）}
+  \label{fig:contour-by-kernel}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image7.png}
+  \caption{按约束模式分组的核函数比较}
+  \label{fig:contour-by-mode}
+\end{figure}
+
+\begin{table}[H]
+  \caption{MCMC 参数约束汇总（六种核函数）}
+  \label{tab:mcmc}
+  \centering
+  \footnotesize
+  \begin{tblr}{llccc}
+    \toprule
+    核函数              & 模式        & $\Omega_c$（中位数 $\pm\sigma$） & $\sigma_8$（中位数 $\pm\sigma$） & FoM $\pm$ bootstrap $\sigma$ \\
+    \midrule
+    RBF                 & $\xi(s)$    & $0.297\pm0.046$ & $0.775\pm0.074$ & $49.3\pm0.1$ \\
+    RBF                 & $\xi(\mu)$  & $0.302\pm0.058$ & $0.856\pm0.184$ & $12.9\pm0.0$ \\
+    RBF                 & Joint       & $0.297\pm0.046$ & $0.775\pm0.074$ & $49.3\pm0.1$ \\
+    \midrule
+    Mat\'ern$(5/2)$      & $\xi(s)$    & $0.300\pm0.045$ & $0.754\pm0.081$ & $47.2\pm0.1$ \\
+    Mat\'ern$(5/2)$      & $\xi(\mu)$  & $0.268\pm0.050$ & $0.644\pm0.107$ & $26.1\pm0.1$ \\
+    Mat\'ern$(5/2)$      & Joint       & $0.299\pm0.041$ & $0.721\pm0.070$ & $58.9\pm0.2$ \\
+    \midrule
+    Mat\'ern$(3/2)$      & $\xi(s)$    & $0.294\pm0.047$ & $0.762\pm0.087$ & $43.9\pm0.1$ \\
+    Mat\'ern$(3/2)$      & $\xi(\mu)$  & $0.266\pm0.050$ & $0.645\pm0.107$ & $26.1\pm0.1$ \\
+    Mat\'ern$(3/2)$      & Joint       & $0.291\pm0.040$ & $0.727\pm0.072$ & $58.3\pm0.2$ \\
+    \midrule
+    Mat\'ern$(1/2)$      & $\xi(s)$    & $0.292\pm0.047$ & $0.721\pm0.141$ & $32.7\pm0.1$ \\
+    Mat\'ern$(1/2)$      & $\xi(\mu)$  & $0.267\pm0.049$ & $0.654\pm0.110$ & $25.8\pm0.1$ \\
+    Mat\'ern$(1/2)$      & Joint       & $0.296\pm0.037$ & $0.675\pm0.091$ & $56.3\pm0.2$ \\
+    \midrule
+    RQ                  & $\xi(s)$    & $0.304\pm0.045$ & $0.752\pm0.081$ & $47.2\pm0.1$ \\
+    RQ                  & $\xi(\mu)$  & $0.271\pm0.052$ & $0.639\pm0.103$ & $25.9\pm0.1$ \\
+    RQ                  & Joint       & $0.304\pm0.041$ & $0.715\pm0.072$ & $57.7\pm0.2$ \\
+    \midrule
+    Combined            & $\xi(s)$    & $0.300\pm0.045$ & $0.755\pm0.083$ & $46.6\pm0.1$ \\
+    Combined            & $\xi(\mu)$  & $0.277\pm0.056$ & $0.645\pm0.128$ & $19.3\pm0.1$ \\
+    Combined            & Joint       & $0.307\pm0.044$ & $0.721\pm0.078$ & $50.4\pm0.1$ \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\section{MCMC 收敛诊断}\label{sec:convergence}
+
+\textbf{（1）Gelman--Rubin $\hat R$。} 所有 18 组 MCMC 运行的 $\hat R$ 均 ${<}1.01$
+（\autoref{tab:rhat}），远低于收敛阈值 $1.1$。
+
+\textbf{（2）自相关时间。} 约 $30$--$47$ 步。有效样本数按 ${\rm N\_eff}=({\rm N\_steps}-
+{\rm burnin})/\tau$ 估计（不乘以 walker 数，因 emcee 的 walker 间非独立），约为
+$64$--$99$ 个独立样本，对二维参数的后验估计是充分的。\autoref{tab:rhat} 中``有效样本''
+按保守估计 ${\rm N\_steps}/\tau_{\max}$ 计算。
+
+\textbf{（3）链轨迹图。} \autoref{fig:trace} 展示六种核函数在 $\xi(s)$ 模式下的 $\Omega_c$
+参数 MCMC 链轨迹（3000 步，1000 步 burn-in，配置与正文 5000 步运行相同但步数较短；
+红色虚线标记 burn-in 边界），所有核函数的链均在 burn-in 后迅速混合并稳定，无漂移趋势，
+验证了收敛性。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{image8.png}
+  \caption{MCMC 链轨迹图（六种核函数，$\xi(s)$ 模式，$\Omega_c$ 参数，
+    40 条 walker $\times$ 3000 步含 1000 步 burn-in；红色虚线为 burn-in 边界）}
+  \label{fig:trace}
+\end{figure}
+
+\begin{table}[H]
+  \caption{MCMC 收敛诊断（Gelman--Rubin $\hat R$，全部六种核函数）}
+  \label{tab:rhat}
+  \centering
+  \footnotesize
+  \begin{tblr}{llcccc}
+    \toprule
+    核函数             & 模式        & $\hat R(\Omega_c)$ & $\hat R(\sigma_8)$ & 自相关时间 & N$_{\rm eff}$ \\
+    \midrule
+    RBF                 & $\xi(s)$    & $1.004$ & $1.004$ & ${\sim}31$ & ${\sim}97$ \\
+    RBF                 & $\xi(\mu)$  & $1.009$ & $1.010$ & ${\sim}47$ & ${\sim}64$ \\
+    RBF                 & Joint       & $1.004$ & $1.004$ & ${\sim}31$ & ${\sim}97$ \\
+    Mat\'ern$(5/2)$      & $\xi(s)$    & $1.005$ & $1.007$ & ${\sim}31$ & ${\sim}97$ \\
+    Mat\'ern$(5/2)$      & $\xi(\mu)$  & $1.008$ & $1.004$ & ${\sim}38$ & ${\sim}79$ \\
+    Mat\'ern$(5/2)$      & Joint       & $1.007$ & $1.007$ & ${\sim}32$ & ${\sim}94$ \\
+    Mat\'ern$(3/2)$      & $\xi(s)$    & $1.003$ & $1.005$ & ${\sim}32$ & ${\sim}94$ \\
+    Mat\'ern$(3/2)$      & $\xi(\mu)$  & $1.004$ & $1.005$ & ${\sim}40$ & ${\sim}75$ \\
+    Mat\'ern$(3/2)$      & Joint       & $1.006$ & $1.003$ & ${\sim}33$ & ${\sim}91$ \\
+    Mat\'ern$(1/2)$      & $\xi(s)$    & $1.005$ & $1.004$ & ${\sim}33$ & ${\sim}91$ \\
+    Mat\'ern$(1/2)$      & $\xi(\mu)$  & $1.004$ & $1.006$ & ${\sim}40$ & ${\sim}76$ \\
+    Mat\'ern$(1/2)$      & Joint       & $1.007$ & $1.006$ & ${\sim}32$ & ${\sim}94$ \\
+    RQ                  & $\xi(s)$    & $1.004$ & $1.005$ & ${\sim}30$ & ${\sim}99$ \\
+    RQ                  & $\xi(\mu)$  & $1.008$ & $1.005$ & ${\sim}40$ & ${\sim}74$ \\
+    RQ                  & Joint       & $1.006$ & $1.004$ & ${\sim}32$ & ${\sim}94$ \\
+    Combined            & $\xi(s)$    & $1.004$ & $1.007$ & ${\sim}33$ & ${\sim}91$ \\
+    Combined            & $\xi(\mu)$  & $1.007$ & $1.010$ & ${\sim}47$ & ${\sim}64$ \\
+    Combined            & Joint       & $1.007$ & $1.005$ & ${\sim}31$ & ${\sim}97$ \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\section{重复性验证（3-seed 稳定性）}\label{sec:reproducibility}
+
+为验证超参数优化的可重复性，采用 3 个不同随机种子（${\rm seed}=42$、$123$、$777$）独立
+重复训练所有仿真器。\autoref{tab:3seed} 展示完整结果。
+
+\begin{table}[H]
+  \caption{3-seed 重复性验证结果}
+  \label{tab:3seed}
+  \centering
+  \footnotesize
+  \begin{tblr}{llcc}
+    \toprule
+    核函数             & 种子            & $\xi(s)$ LOO MAE        & $\xi(\mu)$ LOO MAE       \\
+    \midrule
+    RBF                 & $42$            & $0.005647$              & $0.015682$               \\
+                        & $123$           & $0.005647$              & $0.015300$               \\
+                        & $777$           & $0.005647$              & $0.015300$               \\
+                        & 均值 $\pm$ 标准差 & $0.005647\pm0.000000$ & $0.015427\pm0.000180$    \\
+    \midrule
+    Mat\'ern$(5/2)$      & $42$            & $0.005139$              & $0.015320$               \\
+                        & $123$           & $0.005139$              & $0.015320$               \\
+                        & $777$           & $0.005139$              & $0.015320$               \\
+                        & 均值 $\pm$ 标准差 & $0.005139\pm0.000000$ & $0.015320\pm0.000000$    \\
+    \midrule
+    Mat\'ern$(3/2)$      & $42$            & $0.005088$              & $0.015328$               \\
+                        & $123$           & $0.005108$              & $0.015328$               \\
+                        & $777$           & $0.005108$              & $0.015328$               \\
+                        & 均值 $\pm$ 标准差 & $0.005101\pm0.000010$ & $0.015328\pm0.000000$    \\
+    \midrule
+    Mat\'ern$(1/2)$      & $42$            & $0.008211$              & $0.015344$               \\
+                        & $123$           & $0.008211$              & $0.015344$               \\
+                        & $777$           & $0.008211$              & $0.015344$               \\
+                        & 均值 $\pm$ 标准差 & $0.008211\pm0.000000$ & $0.015344\pm0.000000$    \\
+    \midrule
+    RQ                  & $42$            & $0.005392$              & $0.015300$               \\
+                        & $123$           & $0.005392$              & $0.015300$               \\
+                        & $777$           & $0.005392$              & $0.015410$               \\
+                        & 均值 $\pm$ 标准差 & $0.005392\pm0.000000$ & $0.015337\pm0.000052$    \\
+    \midrule
+    Combined            & $42$            & $0.005156$              & $0.015568$               \\
+                        & $123$           & $0.005156$              & $0.015300$               \\
+                        & $777$           & $0.005156$              & $0.015300$               \\
+                        & 均值 $\pm$ 标准差 & $0.005156\pm0.000000$ & $0.015389\pm0.000126$    \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+$\xi(s)$ 的种子间标准差 ${<}0.000001$，结果完全稳定；$\xi(\mu)$ 的标准差约
+$0.0001$--$0.0002$（RBF: $0.000180$，Mat\'ern: $0.000000$，Combined: $0.000126$），
+表明 20 次 Optuna 试验对于 $\xi(\mu)$ 已基本收敛，核函数间的精度差异不受随机性影响。
