@@ -42,8 +42,6 @@
   }
 
 % 载入其他常用宏包
-% \usepackage{thmtools}       % 数学定理
-\usepackage{keytheorems}    % 数学定理
 \usepackage{siunitx}        % 物理单位
 \usepackage{subcaption}     % 图片并排
 \usepackage{tabularray}     % 表格
@@ -59,12 +57,14 @@
 % ==============================================
 
 \usepackage{float}          % 浮动体
-\usepackage[ruled]{algorithm2e} % 算法
-% \usepackage{minted}         % 代码
-\usepackage{listings}       % 代码
 % amsmath 已由 cls 加载；amssymb 和 bm 与 unicode-math 冲突，已由其替代
 % 如需粗体数学符号，使用 \symbf{} 替代 \bm{}
 % booktabs 已由 tabularray 的 booktabs 库提供，无需重复加载
+
+% ========== 【中英文混排允许更松的字间距，消除 Overfull/Underfull hbox】 ==========
+\emergencystretch=3em
+\hbadness=10000  % 抑制无害的 underfull warning
+% =================================================================================
 
 % ========== 【图表公式编号：点号改短横线，符合中大格式要求】 ==========
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}
@@ -73,20 +73,6 @@
 % =====================================================================
 
 
-
-\lstset{
-    backgroundcolor=\color{gray!5!white},
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    framesep=10pt,
-    rulecolor=\color{lightgray},
-    showstringspaces=false,
-    keywordstyle=\color{blue},
-    stringstyle=\color{red},
-    commentstyle=\color{green!50!black},
-    language=Python % 设置默认语言
-}
 
 \begin{document}
 
@@ -109,9 +95,6 @@
 \input{chapters/chapter6.tex}
 
 
-\appendix
-
-\input{chapters/appendix.tex}
 \input{chapters/acknowledgements.tex}
 
 \end{document}

@@ -19,9 +19,11 @@
   （配对 Wilcoxon 检验 $p<0.0001$，经 Bonferroni 校正后仍显著），而 Mat\'ern$(\nu=1/2)$
   核因过度粗糙表现最差（MAE${}=0.00821$，比 RBF 高 $45\%$）。Mat\'ern$(\nu=5/2)$ 与
   Mat\'ern$(\nu=3/2)$ 性能无统计显著差异（$p=0.81$），表明 $\nu=5/2$ 和 $3/2$ 均为合适
-  选择。$\xi(\mu)$ 上核函数差异在无泄露条件下不显著。Mat\'ern$(\nu=5/2)$ 核的联合约束品质
-  因子 ${\rm FoM}=58.9$（bootstrap 标准差 $0.2$），相比单独使用 $\xi(s)$ 提升 $25\%$。
-  六种核的联合 FoM 从高到低依次为：Mat\'ern$(5/2)$ ($58.9$) ${}>{}$ Mat\'ern$(3/2)$
+  选择。$\xi(\mu)$ 上核函数差异在无泄露条件下不显著，不作为核函数推荐依据。
+  Mat\'ern$(\nu=5/2)$ 核的联合约束品质因子 ${\rm FoM}=58.9$（bootstrap 标准差 $0.2$），
+  在相同协方差设定下相比单独使用 $\xi(s)$ 提升约 $25\%$（FoM 的绝对数值因协方差矩阵高估
+  不具物理意义，仅作核函数相对排序）。六种核的联合 FoM 从高到低依次为：
+  Mat\'ern$(5/2)$ ($58.9$) ${}>{}$ Mat\'ern$(3/2)$
   ($58.3$) ${}>{}$ RQ ($57.7$) ${}>{}$ Mat\'ern$(1/2)$ ($56.3$) ${}>{}$ Combined
   ($50.4$) ${}>{}$ RBF ($49.3$)。实验通过 3-seed 重复性验证（MAE 种子间标准差
   ${<}0.0002$）和 Gelman--Rubin 收敛诊断（$\hat R<1.01$）确认了结果稳健性。本研究推荐
@@ -53,9 +55,12 @@
   RQ ($0.00539$, $p<0.001$); Mat\'ern$(\nu=1/2)$ performs worst (MAE ${}=0.00821$,
   too rough). Mat\'ern$(5/2)$ and Mat\'ern$(3/2)$ show no significant difference
   ($p=0.81$). (2) For $\xi(\mu)$, kernel differences are not robust under
-  leakage-free conditions. (3) Joint FoM ranking: Mat\'ern$(5/2)$ ($58.9$) ${}>{}$
-  Mat\'ern$(3/2)$ ($58.3$) ${}>{}$ RQ ($57.7$) ${}>{}$ Mat\'ern$(1/2)$ ($56.3$)
-  ${}>{}$ Combined ($50.4$) ${}>{}$ RBF ($49.3$). (4) Results are highly reproducible
+  leakage-free conditions and are \emph{not} used as a basis for kernel recommendation.
+  (3) Joint FoM ranking (the absolute FoM values carry no direct physical meaning due
+  to covariance-matrix overestimation and are used only for relative kernel ordering):
+  Mat\'ern$(5/2)$ ($58.9$) ${}>{}$ Mat\'ern$(3/2)$ ($58.3$) ${}>{}$ RQ ($57.7$) ${}>{}$
+  Mat\'ern$(1/2)$ ($56.3$) ${}>{}$ Combined ($50.4$) ${}>{}$ RBF ($49.3$).
+  (4) Results are highly reproducible
   across $3$ independent random seeds. (5) All MCMC chains pass Gelman--Rubin
   convergence diagnostics ($\hat R<1.01$). This work recommends Mat\'ern$(\nu=5/2)$
   as the default kernel for CSST-oriented cosmological emulators.
