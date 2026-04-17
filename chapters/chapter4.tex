@@ -38,7 +38,7 @@ $\sigma_8=0.81006$）。
     Mat\'ern$(\nu=3/2)$ & $0.00511$    & $0.00024$   & $0.01533$      & $0.00015$     \\
     Mat\'ern$(\nu=1/2)$ & $0.00821$    & $0.00052$   & $0.01534$      & $0.00015$     \\
     RQ                 & $0.00539$    & $0.00027$   & $0.01530$      & $0.00015$     \\
-    Mat\'ern $\times$ RBF & $0.00511$ & $0.00024$   & $0.01526$      & $0.00015$     \\
+    Combined (Mat\'ern $\times$ RBF) & $0.00511$ & $0.00024$ & $0.01526$ & $0.00015$ \\
     \bottomrule
   \end{tblr}
 \end{table}
@@ -66,19 +66,19 @@ $\sigma_8=0.81006$）。
     \toprule
     核函数             & 统计量      & 信号核                                  & WhiteKernel 噪声 & $\alpha$    \\
     \midrule
-    RBF                 & $\xi(s)$    & $3.88^{2}\cdot{\rm RBF}(\ell=11.5)$        & $0.00688$       & $1.27\mathrm{e}{-}5$ \\
-    Mat\'ern$(5/2)$      & $\xi(s)$    & $5.53^{2}\cdot{\rm Mat\acute{e}rn}(\ell=21.4,\nu=5/2)$ & $0.00481$ & $4.97\mathrm{e}{-}5$ \\
-    Mat\'ern$(3/2)$      & $\xi(s)$    & $11.4^{2}\cdot{\rm Mat\acute{e}rn}(\ell=60.5,\nu=3/2)$ & $0.00126$ & $8.39\mathrm{e}{-}6$ \\
-    Mat\'ern$(1/2)$      & $\xi(s)$    & $3.63^{2}\cdot{\rm Mat\acute{e}rn}(\ell=281,\nu=1/2)$  & $1.0\mathrm{e}{-}5$ & $1.02\mathrm{e}{-}6$ \\
-    RQ                  & $\xi(s)$    & $5.00^{2}\cdot{\rm RQ}(\alpha=1.06,\ell=15.2)$ & $0.00303$ & $3.26\mathrm{e}{-}3$ \\
-    Combined            & $\xi(s)$    & $4.76^{2}\cdot{\rm M}(\ell=19.6)\cdot{\rm RBF}(\ell=9.8\mathrm{e}{4})$ & $0.00360$ & $1.09\mathrm{e}{-}6$ \\
+    RBF                 & $\xi(s)$    & $3.88^{2}\cdot{\rm RBF}(\ell=11.5)$        & $0.00688$       & \num{1.27e-5} \\
+    Mat\'ern$(5/2)$      & $\xi(s)$    & $5.53^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=21.4,\nu=5/2)$ & $0.00481$ & \num{4.97e-5} \\
+    Mat\'ern$(3/2)$      & $\xi(s)$    & $11.4^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=60.5,\nu=3/2)$ & $0.00126$ & \num{8.39e-6} \\
+    Mat\'ern$(1/2)$      & $\xi(s)$    & $3.63^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=281,\nu=1/2)$  & \num{1.0e-5} & \num{1.02e-6} \\
+    RQ                  & $\xi(s)$    & $5.00^{2}\cdot{\rm RQ}(\alpha=1.06,\ell=15.2)$ & $0.00303$ & \num{3.26e-3} \\
+    Combined            & $\xi(s)$    & $4.76^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=19.6)\cdot{\rm RBF}(\ell=\num{9.8e4})$ & $0.00360$ & \num{1.09e-6} \\
     \midrule
-    RBF                 & $\xi(\mu)$  & $0.026^{2}\cdot{\rm RBF}(\ell=0.011)$       & $0.993$         & $8.47\mathrm{e}{-}4$ \\
-    Mat\'ern$(5/2)$      & $\xi(\mu)$  & $0.425^{2}\cdot{\rm Mat\acute{e}rn}(\ell=2.21,\nu=5/2)$ & $0.832$ & $2.55\mathrm{e}{-}4$ \\
-    Mat\'ern$(3/2)$      & $\xi(\mu)$  & $0.457^{2}\cdot{\rm Mat\acute{e}rn}(\ell=2.08,\nu=3/2)$ & $0.795$ & $8.44\mathrm{e}{-}3$ \\
-    Mat\'ern$(1/2)$      & $\xi(\mu)$  & $0.606^{2}\cdot{\rm Mat\acute{e}rn}(\ell=1.60,\nu=1/2)$ & $0.642$ & $1.74\mathrm{e}{-}3$ \\
-    RQ                  & $\xi(\mu)$  & $0.381^{2}\cdot{\rm RQ}(\alpha=10^{5},\ell=2.32)$ & $0.867$ & $4.80\mathrm{e}{-}6$ \\
-    Combined            & $\xi(\mu)$  & $0.406^{2}\cdot{\rm M}(\ell=1160)\cdot{\rm RBF}(\ell=4.86)$ & $0.930$ & $3.89\mathrm{e}{-}4$ \\
+    RBF                 & $\xi(\mu)$  & $0.026^{2}\cdot{\rm RBF}(\ell=0.011)$       & $0.993$         & \num{8.47e-4} \\
+    Mat\'ern$(5/2)$      & $\xi(\mu)$  & $0.425^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=2.21,\nu=5/2)$ & $0.832$ & \num{2.55e-4} \\
+    Mat\'ern$(3/2)$      & $\xi(\mu)$  & $0.457^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=2.08,\nu=3/2)$ & $0.795$ & \num{8.44e-3} \\
+    Mat\'ern$(1/2)$      & $\xi(\mu)$  & $0.606^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=1.60,\nu=1/2)$ & $0.642$ & \num{1.74e-3} \\
+    RQ                  & $\xi(\mu)$  & $0.381^{2}\cdot{\rm RQ}(\alpha=10^{5},\ell=2.32)$ & $0.867$ & \num{4.80e-6} \\
+    Combined            & $\xi(\mu)$  & $0.406^{2}\cdot\mathrm{Mat\acute{e}rn}(\ell=1160)\cdot{\rm RBF}(\ell=4.86)$ & $0.930$ & \num{3.89e-4} \\
     \bottomrule
   \end{tblr}
 \end{table}
