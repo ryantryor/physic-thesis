@@ -61,6 +61,11 @@
 % 如需粗体数学符号，使用 \symbf{} 替代 \bm{}
 % booktabs 已由 tabularray 的 booktabs 库提供，无需重复加载
 
+% ========== 【中英文混排允许更松的字间距，消除 Overfull/Underfull hbox】 ==========
+\emergencystretch=3em
+\hbadness=10000  % 抑制无害的 underfull warning
+% =================================================================================
+
 % ========== 【图表公式编号：点号改短横线，符合中大格式要求】 ==========
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
